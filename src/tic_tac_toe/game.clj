@@ -82,4 +82,10 @@
       {:board updated-board
        :next-player (other-player current-player)}))
   (turn initial-game-state 1 1))
+ 
+  ;; EXERCISE: Using everything we have defined so far, without
+  ;;           introducing anything new, play a couple of games
+  ;;           with somebody else in the REPL. If you must, it's
+  ;;           OK to use `def` for this.
+  ;; REFLECTION: How did you do it? How did you keep track of state?
 
