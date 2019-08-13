@@ -51,3 +51,13 @@
   {:board empty-board
    :next-player :X})
 
+;; When taking turns, it is convenient to have a function that tells us
+;; who the next player is, given the current player.
+;;
+;; EXERCISE: Define a function `other-player` that takes a player as input
+;;           and returns the other player. So :X gives :O and :O gives :X.
+
+(comment
+  (= :O (other-player :X))
+  (= :X (other-player :O)))
+
