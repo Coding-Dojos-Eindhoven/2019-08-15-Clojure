@@ -99,4 +99,18 @@
         state7 (turn state6 1 0)
         state8 (turn state7 1 2)
         state9 (turn state8 2 2)]
-    state9))
+    state9)
+
+  ;; But we're not really interested in all those intermediate state, are we?
+  ;; We could have written the same game like this:
+  (turn (turn (turn (turn (turn (turn (turn (turn (turn initial-game-state
+                                                    1 1)
+                                              0 0)
+                                        2 0)
+                                  0 2)
+                            0 1)
+                      2 1)
+                1 0)
+          1 2)
+    2 2))
+
