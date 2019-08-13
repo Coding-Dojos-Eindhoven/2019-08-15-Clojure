@@ -1,7 +1,8 @@
-# tic-tac-toe
+# Clojure Coding Dojo: Tic Tac Toe
 
-A Clojure app to ... well, that part is up to you.
+This project is created using [Nightcode](https://sekao.net/nightcode/) version 2.7.0.
 
-## Usage
+Start by looking at [game.clj](./src/tic_tac_toe/game.clj).
 
-FIXME
+Note: This assignment was heavily inspired by episodes 2-5 of the
+["Functional Design in Clojure" podcast](https://clojuredesign.club).
