@@ -112,5 +112,30 @@
                       2 1)
                 1 0)
           1 2)
-    2 2))
+    2 2)
+
+  ;; This does the exact same thing as before, but now we're not keeping track of
+  ;; intermediate states anymore. But was is that boohing, sighing and teeth
+  ;; grinding that I'm hearing? You don't like that syntax? Well, neither do I.
+  ;; As it turns out, Clojure has a nicer syntax to write this down, using the
+  ;; so-called _threading macro_. It looks like this:
+  (-> initial-game-state
+      (turn 1 1)
+      (turn 0 0)
+      (turn 2 0)
+      (turn 0 2)
+      (turn 0 1)
+      (turn 2 1)
+      (turn 1 0)
+      (turn 1 2)
+      (turn 2 2)))
+
+  ;; That sigh was a sigh of relief I think! The arrow as the threading macro.
+  ;; It takes a start value (`initial-game-state` in this case). Then it calls
+  ;; each of the functions below that, adding the start value as the first
+  ;; parameter. The output of that is then added as the first parameter of the
+  ;; next function, and so on. There's also a threading macro `->>` which adds
+  ;; the value at the end instead of the beginning of the parameter list.
+  ;; (There are other variants of the threading macro, such as `as->` and
+  ;; `cond->`, just so that you know.)
 
