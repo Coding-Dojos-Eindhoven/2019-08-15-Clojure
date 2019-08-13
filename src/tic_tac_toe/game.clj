@@ -150,4 +150,25 @@
   ;;           the row and col, instead of the row and col separately. Also
   ;;           modify the above threaded game run to use `sample-game` instead
   ;;           of the hard-coded numbers. Don't worry about duplication for now.
+(defn update-board [board move player]
+  (assoc-in board move player))
 
+(defn turn [game-state move]
+  (let [current-player (:next-player game-state)
+        updated-board (update-board (:board game-state) move current-player)]
+    (print-board updated-board)
+    {:board updated-board
+     :next-player (other-player current-player)}))
+
+(comment
+  (turn initial-game-state [1 1])
+  (-> initial-game-state
+      (turn (sample-game 0))
+      (turn (sample-game 1))
+      (turn (sample-game 2))
+      (turn (sample-game 3))
+      (turn (sample-game 4))
+      (turn (sample-game 5))
+      (turn (sample-game 6))
+      (turn (sample-game 7))
+      (turn (sample-game 8))))
