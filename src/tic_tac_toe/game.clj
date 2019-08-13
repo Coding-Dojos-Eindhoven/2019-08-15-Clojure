@@ -171,11 +171,19 @@
       (turn (sample-game 5))
       (turn (sample-game 6))
       (turn (sample-game 7))
-      (turn (sample-game 8))))
+      (turn (sample-game 8)))
 
   ;; You have probably heard about the function `reduce`? Did you also also struggle
   ;; with it? Well, it basically does what we did using the threading macro above,
   ;; but with a much more concise syntax.
   ;;
   ;; EXERCISE: write a form that runs the same game using `reduce`
+  (reduce turn initial-game-state sample-game))
+
+  ;; `reduce` takes a function (`turn`), an initial value (`initial-game-state`),
+  ;; and a collection (`sample-game`). It then does exactly what the threading
+  ;; macro above did: it applies the function on the initial value using the
+  ;; first value from the collection, and then keeps applying the function on
+  ;; the output using the values from the collection, until they run out. The
+  ;; last output of the function is the output of the reduce itself.
 
