@@ -233,4 +233,7 @@
   ;;           move from standard input. The return value should
   ;;           be a pair of two integers, just like we used above
   ;;           in the `turn` and `update-board` functions.
+(defn read-turn []
+  (println "Where?")
+  (map #(Integer. %) (rest (re-find #"([0-2]+) ([0-2]+)" (read-line)))))
 
