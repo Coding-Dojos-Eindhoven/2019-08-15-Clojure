@@ -35,5 +35,12 @@
   ;; but we should not use this for more temporary things like `board1`.
   ;; Instead, we can use `let` to create what is called _local bindings_:
   (let [board1 (assoc-in empty-board [1 1] :X)]
+    (print-board board1))
+
+  ;; It looks like we're going to do this updating of boards more then once,
+  ;; so let's define a function for that.
+  (defn update-board [board row col player]
+    (assoc-in board [row col] player))
+  (let [board1 (update-board empty-board 1 1 :X)]
     (print-board board1)))
 
