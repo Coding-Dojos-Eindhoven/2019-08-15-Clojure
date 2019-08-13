@@ -237,3 +237,5 @@
   (println "Where?")
   (map #(Integer. %) (rest (re-find #"([0-2]+) ([0-2]+)" (read-line)))))
 
+  ;; EXERCISE: write an expression that plays a game interactively.
+
