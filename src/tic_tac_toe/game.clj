@@ -238,4 +238,6 @@
   (map #(Integer. %) (rest (re-find #"([0-2]+) ([0-2]+)" (read-line)))))
 
   ;; EXERCISE: write an expression that plays a game interactively.
-
+(comment
+  (defn read-game [] (repeatedly 9 read-turn))
+  (reduce turn initial-game-state (read-game)))
