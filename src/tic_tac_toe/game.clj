@@ -44,3 +44,10 @@
   (let [board1 (update-board empty-board 1 1 :X)]
     (print-board board1)))
 
+;; Great. Now let's think a bit about our game state. So far, we've talked
+;; about the board, but we will also need to keep track of whose turn it is.
+;; Let's define a hash map that holds our initial game state.
+(def initial-game-state
+  {:board empty-board
+   :next-player :X})
+
