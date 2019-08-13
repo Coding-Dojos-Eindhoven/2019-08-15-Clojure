@@ -199,3 +199,8 @@
   ;; programming and immutable data structures, you can keep the history around
   ;; just like that.
 
+  ;; EXERCISE: Define variants of `update-board` and `turn` that take the state
+  ;;           as the last parameter instead of the fist. Write the threaded
+  ;;           game run using the threading macro (hint: `->>`), and write
+  ;;           the form with `reduce` based on these variants.
+
