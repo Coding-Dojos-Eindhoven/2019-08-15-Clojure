@@ -28,5 +28,12 @@
   ;; No worries: instead of modifying the board given to it, `assoc-in` returns
   ;; a _copy_ of the board that contains the desired changes.
   (def board1 (assoc-in empty-board [1 1] :X))
-  (print-board board1))
+  (print-board board1)
+
+  ;; So far, we've been using `def`, which creates global variables in the
+  ;; current namespace. That's fine for a constant like `empty-board` above,
+  ;; but we should not use this for more temporary things like `board1`.
+  ;; Instead, we can use `let` to create what is called _local bindings_:
+  (let [board1 (assoc-in empty-board [1 1] :X)]
+    (print-board board1)))
 
