@@ -172,3 +172,10 @@
       (turn (sample-game 6))
       (turn (sample-game 7))
       (turn (sample-game 8))))
+
+  ;; You have probably heard about the function `reduce`? Did you also also struggle
+  ;; with it? Well, it basically does what we did using the threading macro above,
+  ;; but with a much more concise syntax.
+  ;;
+  ;; EXERCISE: write a form that runs the same game using `reduce`
+
