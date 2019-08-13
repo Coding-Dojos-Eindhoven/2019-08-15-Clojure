@@ -63,5 +63,16 @@
 
 (comment
   (= :O (other-player :X))
-  (= :X (other-player :O)))
+  (= :X (other-player :O))
+
+  ;; Now we can create a function `turn` that takes a row and a column as
+  ;; input, and updates the game state.
+  ;;
+  ;; EXERCISE: Fill in the blanks:
+  (defn turn [game-state row col]
+    (let [current-player _
+          updated-board _]
+      (print-board updated-board)
+      {:board updated-board
+       :next-player _})))
 
