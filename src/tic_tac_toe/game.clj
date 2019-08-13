@@ -81,7 +81,7 @@
       (print-board updated-board)
       {:board updated-board
        :next-player (other-player current-player)}))
-  (turn initial-game-state 1 1))
+  (turn initial-game-state 1 1)
  
   ;; EXERCISE: Using everything we have defined so far, without
   ;;           introducing anything new, play a couple of games
@@ -89,3 +89,14 @@
   ;;           OK to use `def` for this.
   ;; REFLECTION: How did you do it? How did you keep track of state?
 
+  ;; Here's the game I played against myself. It was a tie!
+  (let [state1 (turn initial-game-state 1 1)
+        state2 (turn state1 0 0)
+        state3 (turn state2 2 0)
+        state4 (turn state3 0 2)
+        state5 (turn state4 0 1)
+        state6 (turn state5 2 1)
+        state7 (turn state6 1 0)
+        state8 (turn state7 1 2)
+        state9 (turn state8 2 2)]
+    state9))
