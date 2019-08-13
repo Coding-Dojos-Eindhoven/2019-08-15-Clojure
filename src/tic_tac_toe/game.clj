@@ -128,7 +128,7 @@
       (turn 2 1)
       (turn 1 0)
       (turn 1 2)
-      (turn 2 2)))
+      (turn 2 2))
 
   ;; That sigh was a sigh of relief I think! The arrow as the threading macro.
   ;; It takes a start value (`initial-game-state` in this case). Then it calls
@@ -138,4 +138,16 @@
   ;; the value at the end instead of the beginning of the parameter list.
   ;; (There are other variants of the threading macro, such as `as->` and
   ;; `cond->`, just so that you know.)
+  
+  ;; Now let's say that we want to make a list of all moves that are done, and
+  ;; use that as input.
+  (def sample-game [[1 1] [0 0] [2 0] [0 2] [0 1] [2 1] [1 0] [1 2] [2 2]]))
+  
+  ;; This requires modifying our functions slightly to take a pair (vector) as
+  ;; input, instead of two separate numbers.
+
+  ;; EXERCISE: Modify `update-board` and `turn` to accept a pair containing
+  ;;           the row and col, instead of the row and col separately. Also
+  ;;           modify the above threaded game run to use `sample-game` instead
+  ;;           of the hard-coded numbers. Don't worry about duplication for now.
 
