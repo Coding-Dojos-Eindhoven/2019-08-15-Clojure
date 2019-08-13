@@ -223,3 +223,14 @@
        (turn-2 (sample-game 8)))
   (reduce #(turn-2 %2 %1) initial-game-state sample-game))
 
+  ;; Next up: interactivity.
+  ;;
+  ;; We'll need to read the player's moves from standard input.
+  ;; One way of doing that is `read-line`, which reads a line
+  ;; from standard input and returns that as a string.
+  
+  ;; EXERCISE: write a function `read-turn` that reads a player's
+  ;;           move from standard input. The return value should
+  ;;           be a pair of two integers, just like we used above
+  ;;           in the `turn` and `update-board` functions.
+
