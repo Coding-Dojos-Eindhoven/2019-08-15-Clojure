@@ -74,5 +74,12 @@
           updated-board _]
       (print-board updated-board)
       {:board updated-board
-       :next-player _})))
+       :next-player _}))
+  (defn turn [game-state row col]
+    (let [current-player (:next-player game-state)
+          updated-board (update-board (:board game-state) row col current-player)]
+      (print-board updated-board)
+      {:board updated-board
+       :next-player (other-player current-player)}))
+  (turn initial-game-state 1 1))
 
