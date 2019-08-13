@@ -56,6 +56,10 @@
 ;;
 ;; EXERCISE: Define a function `other-player` that takes a player as input
 ;;           and returns the other player. So :X gives :O and :O gives :X.
+(defn other-player [player]
+  (if (= :X player)
+    :O
+    :X))
 
 (comment
   (= :O (other-player :X))
