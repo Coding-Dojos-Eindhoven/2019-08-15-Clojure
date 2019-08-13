@@ -190,7 +190,7 @@
   ;; There's also a variant of `reduce` called `reductions`. It does the exact
   ;; same thing, but it also keeps track of all intermediate states for you, 
   ;; so that you get a complete transcript of what happend while running the game.
-  (reductions turn initial-game-state sample-game))
+  (reductions turn initial-game-state sample-game)
 
   ;; All of that functionality, including all the intermediate states,
   ;; with as little duplication as possible. With OO, because things are mutated,
@@ -203,4 +203,23 @@
   ;;           as the last parameter instead of the fist. Write the threaded
   ;;           game run using the threading macro (hint: `->>`), and write
   ;;           the form with `reduce` based on these variants.
+  (defn update-board-2 [move player board]
+    (assoc-in board move player))
+  (defn turn-2 [move game-state]
+    (let [current-player (:next-player game-state)
+          updated-board (update-board-2 move current-player (:board game-state))]
+      (print-board updated-board)
+      {:board updated-board
+       :next-player (other-player current-player)}))
+  (->> initial-game-state
+       (turn-2 (sample-game 0))
+       (turn-2 (sample-game 1))
+       (turn-2 (sample-game 2))
+       (turn-2 (sample-game 3))
+       (turn-2 (sample-game 4))
+       (turn-2 (sample-game 5))
+       (turn-2 (sample-game 6))
+       (turn-2 (sample-game 7))
+       (turn-2 (sample-game 8)))
+  (reduce #(turn-2 %2 %1) initial-game-state sample-game))
 
