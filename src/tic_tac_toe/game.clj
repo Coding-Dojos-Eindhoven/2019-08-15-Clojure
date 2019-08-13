@@ -178,7 +178,7 @@
   ;; but with a much more concise syntax.
   ;;
   ;; EXERCISE: write a form that runs the same game using `reduce`
-  (reduce turn initial-game-state sample-game))
+  (reduce turn initial-game-state sample-game)
 
   ;; `reduce` takes a function (`turn`), an initial value (`initial-game-state`),
   ;; and a collection (`sample-game`). It then does exactly what the threading
@@ -186,4 +186,16 @@
   ;; first value from the collection, and then keeps applying the function on
   ;; the output using the values from the collection, until they run out. The
   ;; last output of the function is the output of the reduce itself.
+
+  ;; There's also a variant of `reduce` called `reductions`. It does the exact
+  ;; same thing, but it also keeps track of all intermediate states for you, 
+  ;; so that you get a complete transcript of what happend while running the game.
+  (reductions turn initial-game-state sample-game))
+
+  ;; All of that functionality, including all the intermediate states,
+  ;; with as little duplication as possible. With OO, because things are mutated,
+  ;; old state is gone as soon as you make a new turn. If you want to keep it
+  ;; around, you have to duplicate everything all the time. With functional
+  ;; programming and immutable data structures, you can keep the history around
+  ;; just like that.
 
