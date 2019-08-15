@@ -237,7 +237,8 @@
   (println "Where?")
   (map #(Integer. %) (rest (re-find #"([0-2]+) ([0-2]+)" (read-line)))))
 
-  ;; EXERCISE: write an expression that plays a game interactively.
+;; EXERCISE: write an expression that plays a game interactively.
+(defn read-game [] (repeatedly 9 read-turn))
 (comment
-  (defn read-game [] (repeatedly 9 read-turn))
   (reduce turn initial-game-state (read-game)))
+
