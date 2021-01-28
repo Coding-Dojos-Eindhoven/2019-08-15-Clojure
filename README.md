@@ -19,8 +19,6 @@ Below is the content of the Gist that was used during the Coding Dojo:
 
 We wish you an open mind and an insightful evening! 
 
-<img src="http://api.ning.com/files/th4*NBWP6GOBBlapZ9WdDRtNpgXhSdFefYHIZxOoktfsWSHen1T90UG3seC16SeIoZ*GllnWTC2nzNswdn*TPzLInYKrjLii/blog.jpg" width="50%" />
-
 ## Pointers
 
 * A good place to find Clojure core API documentation is [clojuredocs.org](https://clojuredocs.org).
